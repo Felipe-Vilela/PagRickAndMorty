@@ -1,0 +1,296 @@
+
+body, p, h1, ul, li {
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-family: 'Vollkorn', Georgia, serif;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.estrutura_geral{
+    display: grid;
+    grid-template-columns:minmax(160px,1fr) 3fr 300px;
+    grid-template-areas: 
+        "cabecalho cabecalho cabecalho"
+        "personagens conteudo propagandas"
+        "footer footer footer"
+    ;
+
+}
+/* CABEÇALHO */
+
+.cabecalho{
+    font-family: 'Roboto Slab', serif;
+
+    grid-area: cabecalho;
+    background: linear-gradient(135deg, #c8f06b,	#ADDE2F) ;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr auto ;
+    align-items: center;
+}
+
+.logo{
+    margin-left: 40px;
+    max-width: 200px;
+}
+
+.cabecalho nav ul{
+    margin-right: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cabecalho nav a {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.cabecalho nav a:hover {
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.cabecalho li + li{
+    margin-left: 25px;
+}
+
+/* PERSONAGENS */
+
+.personagens{
+    grid-area: personagens;
+    background: #F0F2EB;
+    padding: 25px;
+    
+}
+
+
+.personagens li a {
+    display: block;
+    min-width: 60px;
+    max-width: 100px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(116,142,58, 0.5);
+    transition: 0.2s;
+    color: #046972;
+    
+
+}
+
+.personagens li a:hover{
+    background: linear-gradient(135deg, #97ce4c,	#bddf8e) ;
+    color: #024046;
+
+}
+
+.personagens img{
+    margin-bottom: 15px;
+}
+
+/* CONTEUDO */
+
+.conteudo{
+    grid-area: conteudo;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+
+}
+
+.coluna_larga{
+    grid-column: 1 / -1;
+}
+
+.imagem-1{
+    grid-row: span 2 ;
+    align-self: end;
+    width: 100%;
+}
+
+.imagem-2{
+    align-self: end;
+}
+
+p{
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: -0.1px;
+    color: rgba(0,0,0,.7);
+}
+
+.informacoes_criacao p + p{
+    margin-top: 25px;
+}
+
+.titulo{
+    color:#97ce4c ;
+}
+
+.titulo h1{
+    font-size: 65px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.titulo span{
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* EMISSORAS */
+
+.emissoras{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.emissoras > div {
+    width: 130px;
+    text-align: center;
+    background: linear-gradient(135deg,	#ADDE2F, #c8f06b) ;
+    box-shadow: 5px 5px 15px 0px rgba(116,142,58, 0.5);
+    border-radius: 5px;
+
+}
+
+.emissoras > div:first-child{
+    margin-right: 25px;
+}
+
+.emissoras span{
+    display: block;
+    color: rgba(0,0,0,.5);
+
+}
+
+.emissora{
+    background: white;
+    font-size: 20px;
+    line-height: 1;
+    margin: 10px auto;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 0;
+}
+
+.logo_emissora img {
+    max-width:130px ;
+}
+
+.destaque_img1{
+    display: flex;
+    justify-self: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #97ce4c;
+    max-width: 300px;
+}
+
+.curiosidades{
+    padding: 25px;
+    border-radius: 5px;
+    background: linear-gradient(135deg,	#ADDE2F, #c8f06b) ;
+    box-shadow: 5px 5px 15px 0px rgba(116,142,58, 0.5);
+}
+
+.curiosidades li{
+    color: #046972;
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px ;
+    padding: 15px;
+}
+
+.curiosidades li + li{
+    border-top: 2px solid #c8f06b;
+}
+
+
+/* PROPAGANDAS */
+
+.propagandas{
+    grid-area: propagandas;
+    background: #F0F2EB;
+    display: grid;
+    align-content: start;
+    padding: 25px;
+    grid-gap: 25px;
+}
+
+
+.anuncio_item p {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.anuncio_item p:hover{
+    background: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* FOOTER */
+
+.footer{
+    font-family: 'Roboto Slab', serif;
+    grid-area: footer;
+    background: linear-gradient(135deg,	#ADDE2F, #c8f06b) ;
+
+}
+
+.footer p {
+    color: #046972;
+    text-align: center;
+    padding: 25px;
+
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    background: white;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
