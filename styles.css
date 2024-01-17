@@ -34,13 +34,38 @@ h2 {
         "personagens conteudo propagandas"
         "footer footer footer"
     ;
-
 }
+
+@media (max-width: 1200px){
+    
+    .estrutura_geral{
+        grid-template-areas:
+        "cabecalho cabecalho cabecalho"
+        "personagens conteudo conteudo"
+        "personagens propagandas propagandas"
+        "footer footer footer"
+        ;
+    }
+}
+
+@media (max-width: 760px){
+    .estrutura_geral{
+        grid-template-columns:100%;
+        grid-template-areas: 
+        "cabecalho"
+        "personagens"
+        "conteudo"
+        "propagandas"
+        "footer"
+        ;
+    }
+}
+
+
 /* CABEÇALHO */
 
 .cabecalho{
     font-family: 'Roboto Slab', serif;
-
     grid-area: cabecalho;
     background: linear-gradient(135deg, #c8f06b,	#ADDE2F) ;
     padding: 25px;
@@ -79,15 +104,37 @@ h2 {
     margin-left: 25px;
 }
 
+@media (max-width: 760px) {
+    header .cabecalho{
+        display: flex;
+    }
+    .cabecalho{
+        grid-template-columns: auto;
+        justify-content: center;
+        
+    }
+    .logo{
+        margin-bottom: 15px;
+        margin-left: 5px;
+    }
+   .cabecalho nav ul {
+    margin-right: 0px;
+   }
+    .cabecalho nav a {
+        font-size: 12px;
+    }
+    .cabecalho li + li {
+        margin-left: 10px;
+    } 
+}
+
 /* PERSONAGENS */
 
 .personagens{
     grid-area: personagens;
     background: #F0F2EB;
-    padding: 25px;
-    
+    padding: 25px;  
 }
-
 
 .personagens li a {
     display: block;
@@ -101,7 +148,63 @@ h2 {
     box-shadow: 5px 5px 15px 0px rgba(116,142,58, 0.5);
     transition: 0.2s;
     color: #046972;
-    
+}
+
+@keyframes seta{
+    from{
+        right: 30px;
+    }
+    to{
+        right: 20px;
+    }
+}
+
+@media (max-width: 760px){
+    .personagens{
+        position: relative;
+        overflow-x: auto;
+        --webkit--overflow-scrolling: touch;
+        --ms-overflow-style: -ms-autohiding-scrollbar;     
+    }
+
+    .personagens::after{
+        content: '→';
+        position: absolute;
+        top: 5px;
+        right: 30px;
+        color:rgba(0, 0, 0,.3);
+        animation: seta .5s ease-in 0s infinite alternate;
+    }
+
+    .personagens ul{
+        display: flex;
+    }
+
+    .personagens ul li{
+        flex: 1 0 60px;
+        margin-left: 15px;
+        margin-right: 15px; 
+    }
+
+    .personagens{
+        padding: 0 30px ;
+    }
+
+    .personagens li a {
+        margin: 30px 30px 30px 0;
+        font-size: 11px;
+    }
+    .personagens img{
+        width: 100%;
+    }
+
+    .personagens li a img {
+        height: 70px;
+    }
+
+    h2 {
+        display: none;
+    }
 
 }
 
@@ -125,7 +228,12 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 25px;
+}
 
+@media (max-width: 600px){
+    .conteudo{
+        grid-template-columns: auto;
+    }
 }
 
 .coluna_larga{
@@ -253,11 +361,16 @@ p{
     color: white;
     text-align: center;
     transition: 0.2s;
+    max-width: 100%;
 }
 
 .anuncio_item p:hover{
     background: rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.5);
+}
+
+.anuncio_item img{
+    max-width: 100%;
 }
 
 
